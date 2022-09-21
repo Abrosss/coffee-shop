@@ -1,0 +1,350 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  padding: 0 5%;
+  font-family: "Barlow", sans-serif;
+}
+
+.home {
+  background-color: hsl(43deg, 78%, 98%);
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header nav {
+  width: 100%;
+  height: 12%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav img {
+  width: 85%;
+}
+header nav div {
+  display: flex;
+  gap: 2.5rem;
+}
+header nav div a {
+  text-decoration: none;
+  color: hsl(215deg, 5%, 54%);
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+header .header {
+  height: 88%;
+  width: 100%;
+  background-image: url(/public/assets/home/image-hero-coffeepress.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 15px;
+}
+header .header .content {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 10% 5%;
+}
+header .header .content .text {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+header .header .content .text h1 {
+  font-family: "Fraunces", sans-serif;
+  font-size: 5rem;
+  line-height: 0.8;
+  color: hsl(43deg, 78%, 98%);
+}
+header .header .content .text p {
+  font-family: "Barlow", sans-serif;
+  font-size: 1rem;
+  color: hsl(43deg, 78%, 98%);
+  opacity: 0.8;
+  line-height: 1.8;
+}
+header .header .content a {
+  text-align: center;
+  width: 50%;
+  background-color: hsl(179deg, 81%, 29%);
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  color: hsl(43deg, 78%, 98%);
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#collection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#collection .header {
+  padding-top: 8%;
+}
+#collection .header h2 {
+  font-family: "Fraunces", sans-serif;
+  font-size: 11rem;
+  color: hsl(215deg, 5%, 54%);
+  opacity: 0.8;
+}
+#collection .content {
+  width: 76%;
+  display: flex;
+  gap: 1.5rem;
+}
+#collection .content div {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: -8%;
+  z-index: 2;
+}
+#collection .content div img {
+  width: 80%;
+  margin-bottom: 10%;
+}
+#collection .content div h4 {
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+#collection .content div p {
+  color: hsl(215deg, 5%, 54%);
+  line-height: 1.5;
+  text-align: center;
+}
+
+#features {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding: 5% 0;
+}
+#features .header {
+  height: 80%;
+  border-radius: 15px;
+  background-color: hsl(215deg, 19%, 25%);
+  display: flex;
+  justify-content: center;
+}
+#features .header .text {
+  text-align: center;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  color: hsl(43deg, 78%, 98%);
+  width: 50%;
+}
+#features .header .text h4 {
+  font-family: "Fraunces", sans-serif;
+  font-size: 3rem;
+}
+#features .header .text p {
+  opacity: 0.7;
+  line-height: 1.8;
+  width: 90%;
+}
+#features .featuresList {
+  position: absolute;
+  bottom: 0;
+  width: 85%;
+  display: flex;
+  gap: 2rem;
+}
+#features .featuresList div {
+  border-radius: 15px;
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: hsl(179deg, 81%, 29%);
+  width: 33.3%;
+}
+#features .featuresList div img {
+  padding: 3rem 0;
+}
+#features .featuresList div h5 {
+  font-family: "Fraunces", sans-serif;
+  font-size: 1.7rem;
+  color: hsl(43deg, 78%, 98%);
+  padding-bottom: 2rem;
+}
+#features .featuresList div p {
+  color: hsl(43deg, 78%, 98%);
+  opacity: 0.8;
+  width: 70%;
+  line-height: 1.8;
+}
+
+#planDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  gap: 5rem;
+}
+#planDetails .content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#planDetails .content .middle {
+  gap: 3.5rem;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+#planDetails .content .middle h5 {
+  color: hsl(215deg, 5%, 54%);
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+#planDetails .content .middle .line {
+  min-height: 2px;
+  background-color: hsl(25deg, 94%, 86%);
+  width: 57%;
+  position: relative;
+}
+#planDetails .content .middle .line .circle {
+  width: 2px;
+  height: 2px;
+  border: 1px hsl(179deg, 81%, 29%) solid;
+  border-radius: 50%;
+  padding: 1rem 1rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: hsl(43deg, 78%, 98%);
+  transform: translateY(50%);
+}
+#planDetails .content .middle .line .circle:nth-child(1) {
+  left: 0;
+  bottom: 0;
+}
+#planDetails .content .middle .line .circle:nth-child(2) {
+  left: 50%;
+  bottom: 0;
+}
+#planDetails .content .middle .line .circle:nth-child(3) {
+  left: 100%;
+  bottom: 0;
+}
+#planDetails .content .middle .stages {
+  display: flex;
+  width: 80%;
+  gap: 5rem;
+}
+#planDetails .content .middle .stages div {
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+#planDetails .content .middle .stages div .number {
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  color: hsl(25deg, 94%, 86%);
+  font-size: 5rem;
+}
+#planDetails .content .middle .stages div h4 {
+  font-family: "Fraunces", sans-serif;
+  font-size: 1.8rem;
+  word-wrap: break-word;
+  width: 60%;
+}
+#planDetails .content .middle .stages div p {
+  color: hsl(215deg, 5%, 54%);
+  width: 90%;
+  line-height: 1.5;
+}
+#planDetails .content .middle a {
+  text-align: center;
+  width: 20%;
+  background-color: hsl(179deg, 81%, 29%);
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  color: hsl(43deg, 78%, 98%);
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#planDetails footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: hsl(215deg, 19%, 25%);
+  padding: 3% 5%;
+}
+#planDetails footer nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#planDetails footer nav img {
+  width: 85%;
+  opacity: 1;
+}
+#planDetails footer nav div {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+#planDetails footer nav div a {
+  text-decoration: none;
+  color: hsl(215deg, 5%, 54%);
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+#planDetails footer nav div a:first-child {
+  opacity: 1;
+}
+#planDetails footer nav div:first-child {
+  gap: 5rem;
+}
+#planDetails footer nav div:first-child div {
+  gap: 3rem;
+}
+#planDetails footer nav div:last-child {
+  gap: 2rem;
+}
+#planDetails footer nav div:last-child a {
+  opacity: 1;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
