@@ -1,9 +1,11 @@
 module.exports = {
-  getIndex: (req, res) => {
+  getHome: (req, res) => {
     res.render('home.html');
   },
-  getProfile: (req, res) => {
-    res.render("profile.ejs");
+  getAbout: (req, res) => {
+    res.render("about.html");
   },
-
+  getPlan: (req, res) => {
+    res.render("plan.html");
+  },
 };
