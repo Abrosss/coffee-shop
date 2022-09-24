@@ -37,7 +37,7 @@ header {
     img {
         width: 85%;
     }
-    div {
+    .links {
         display: flex;
         gap: 2.5rem;
         a {
@@ -968,5 +968,400 @@ gap: 0;
     display: flex;
 }
 @media (max-width: 1000px) {
+    header {
+        
+        nav {
+     
+       
+        img {
+            width: 75%;
+        }
+        .links {
+            display: none;
+          
+            
+        }
+        .hamburger {
+            width: 6%;
+        }
+        
+    }
+    .header {
+        height: 86%;
+    
+        background-image: url(/assets/home/mobile/image_hero.jpg);
+     
+        
+        .content {
+      
+            width: 100%;
+            align-items: center;
+           gap:3rem;
+            .text {
+                align-items: center;
+                gap: 1.5rem;
+                text-align: center;
+                h1 {
+                    
+                    font-size: 2.5rem;
+                    line-height: .9;
+               
+    
+                }
+                p {
+                    
+                    width: 100%;
+                }
+            }
+    
+            a {
+               
+                width: 70%;
+             
+            }
+        }
+    }
+    .header.about, .header.plan {
+        height: 72%;
+        width: 100%;
+        background-image: url(/assets/about/desktop/image-hero-whitecup.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        border-radius: 15px;
+    
+        justify-content: center;
+        .content {
+    
+          
+            .text {
+              
+                h1 {
+    
+                    font-size: 5rem;
+    
+                }
+                p {
+                   width: 75%;
+                }
+            }
+    
+          
+        }
+    }
+    .header.about {
+        .content {
+            .text {
+                h1 {
+    
+                    font-size: 2.5rem;
+                }
+                p {
+                   width: 85%;
+                }
+            }
+    
+          
+        }
+    }
+    .header.plan {
+        background-image: url(/assets/plan/desktop/image-hero-blackcup.jpg);
+    }
+    }
+    #collection {
    
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        padding-bottom: 5rem;
+        .header {
+            padding-top: 20%;
+            h2 {
+                font-family: "Fraunces", sans-serif;
+                font-size: 2.8rem;
+                color: $gray;
+                opacity: .8;
+            }
+        }
+        .content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 5rem;
+          
+            div {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+              
+                z-index: 2;
+        
+                img {
+                    width: 80%;
+                    margin-bottom: 0;
+                }
+                h4 {
+                    font-family: "Fraunces", sans-serif;
+                    font-weight: 700;
+                    font-size: 1.3rem;
+                }
+                p{
+                     color: $gray;
+                     line-height: 1.5;
+                     text-align: center;
+    
+                }
+            }
+        }
+        
+    }
+    #features {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+      padding: 5% 5%;
+     
+      gap: 4rem;
+        .header {
+            background-color: $blue;
+            height: 100%;
+            border-radius: 15px;
+           padding-bottom: 45rem;
+            display: flex;
+            justify-content: center;
+            
+            .text {
+            text-align: center;
+            padding-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            color: $lightcream;
+            width: 100%;
+            h4 {
+                font-family: "Fraunces", sans-serif;
+                font-size: 1.2rem;
+            }
+            p {
+                opacity: .7;
+                line-height: 1.8;
+                width: 88%;
+            }
+            }
+        }
+        .featuresList {
+           position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: -46rem;
+            padding: 0 5%;
+            div {
+                
+               border-radius: 15px;
+                padding-bottom: 3rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background-color: $green;
+                
+                width: 100%;
+                img {
+                    padding: 3rem 0;
+                }
+                h5 {
+                    font-family: "Fraunces", sans-serif;
+                    font-size: 1.7rem;
+                    color: $lightcream;
+                    padding-bottom: 2rem;
+                }
+                p {
+                    color: $lightcream;
+                    opacity: .8;
+                    width: 70%;
+                    line-height: 1.8;
+                }
+            }
+        }
+    }
+    #planDetails {
+    
+        display: flex;
+        flex-direction: column;
+      align-items: center;
+       padding: 5rem 0;
+       gap: 5rem;
+        .content {
+            height: 100%;
+        display: flex;
+        flex-direction: column;
+       
+        width: 100%;
+        
+    
+        .middle {
+            gap: 3.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h5 {
+                color: $gray;
+                font-family: "Fraunces", sans-serif;
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+            .line {
+                display: none;
+                min-height: 2px;
+                background-color: $peach;
+                width: 57%;
+                position: relative;
+             
+                .circle {
+                    width: 2px;
+                    height: 2px;
+                    border: 1px $green solid;
+                    border-radius: 50%;
+                    padding: 1rem 1rem;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $lightcream;
+                    transform: translateY(50%);
+                   &:nth-child(1) {
+                    left: 0;
+                    bottom: 0;
+                   }
+                   &:nth-child(2) {
+                    left: 50%;
+                    bottom: 0;
+                   }
+                   &:nth-child(3) {
+                    left: 100%;
+                    bottom: 0;
+                   }
+                }
+            
+            }
+            .stages {
+                display: flex;
+                flex-direction: column;
+               
+                width: 100%;
+                gap: 3rem;
+                div {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 2rem;
+                    text-align: center;
+                    .number {
+                        font-family: "Fraunces", sans-serif;
+                        font-weight: 700;
+                        color: $peach;
+                        font-size: 5rem;
+                    }
+                    h4 {
+                        font-family: "Fraunces", sans-serif;
+                        font-size: 1.8rem;
+                        word-wrap: break-word;
+                        width: 100%;
+                    }
+                    p{
+                        color: $gray;
+                        width: 100%;
+                        line-height: 1.5;
+                    }
+                }
+            }
+            a {
+                text-align: center;
+                width: 70%;
+                background-color: $green;
+                font-family: "Fraunces", sans-serif;
+                text-decoration: none;
+                font-weight: 700;
+                color: $lightcream;
+                font-size: 1.2rem;
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #78d3d1;
+                }
+            }
+        }
+      
+        }
+        footer {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: $blue;
+            padding: 3% 5%;
+            nav {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              
+               
+                img {
+                    width: 85%;
+                    opacity: 1;
+                }
+                div {
+                    display: flex;
+                    gap: 2.5rem;
+                    align-items: center;
+                    a {
+                        text-decoration: none;
+                        color: $gray;
+                        font-family: "Barlow", sans-serif;
+                        font-weight: 700;
+                        font-size: 1rem;
+                        opacity: .8;
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                    a:first-child {
+                        opacity: 1;
+                    }
+                }
+                div:first-child {
+                    gap: 5rem;
+                    div {
+                        gap: 3rem;
+                    }
+                }
+                div:last-child {
+                    gap: 2rem;
+                    a {
+                        opacity: 1;
+                        cursor: pointer;
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
    }
