@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html, body {
   width: 100%;
   min-height: 100%;
@@ -675,16 +679,18 @@ footer nav div:last-child a:hover {
 }
 #create .optionsContainer {
   width: 60%;
+}
+#create .optionsContainer form {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 1rem;
 }
-#create .optionsContainer .option {
+#create .optionsContainer form .option {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
-#create .optionsContainer .option button {
+#create .optionsContainer form .option button {
   display: flex;
   outline: none;
   border: none;
@@ -695,30 +701,37 @@ footer nav div:last-child a:hover {
   align-items: center;
   cursor: pointer;
 }
-#create .optionsContainer .option button h3 {
+#create .optionsContainer form .option button h3 {
   font-family: "Fraunces", sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
   color: hsl(215deg, 5%, 54%);
 }
-#create .optionsContainer .option .options {
+#create .optionsContainer form .option button img {
+  transition: transform 0.1s ease-in-out;
+}
+#create .optionsContainer form .option button img.clicked {
+  transform: rotate(-180deg);
+  transition: transform 0.1s ease-in-out;
+}
+#create .optionsContainer form .option .options {
   display: flex;
   gap: 1.5rem;
   width: 100%;
 }
-#create .optionsContainer .option .options input {
+#create .optionsContainer form .option .options input {
   position: fixed;
   opacity: 0;
   pointer-events: none;
 }
-#create .optionsContainer .option .options input:checked + label {
+#create .optionsContainer form .option .options input:checked + label {
   background-color: hsl(179deg, 81%, 29%);
   color: white;
 }
-#create .optionsContainer .option .options input:checked + label span {
+#create .optionsContainer form .option .options input:checked + label span {
   color: white;
 }
-#create .optionsContainer .option .options label {
+#create .optionsContainer form .option .options label {
   cursor: pointer;
   border-radius: 8px;
   padding: 2.5rem 1.5rem;
@@ -732,7 +745,7 @@ footer nav div:last-child a:hover {
   font-size: 1.3rem;
   width: 33.3%;
 }
-#create .optionsContainer .option .options label span {
+#create .optionsContainer form .option .options label span {
   display: block;
   font-family: "Barlow", sans-serif;
   color: hsl(215deg, 5%, 54%);
@@ -740,27 +753,34 @@ footer nav div:last-child a:hover {
   line-height: 1.5;
   font-size: 1rem;
 }
-#create .optionsContainer .option .options label:hover {
+#create .optionsContainer form .option .options label:hover {
   background-color: hsl(25deg, 94%, 86%);
 }
-#create .optionsContainer .result {
+#create .optionsContainer form .result {
   background-color: hsl(215deg, 19%, 25%);
   display: flex;
   flex-direction: column;
-  padding: 2rem 4rem;
+  justify-content: center;
+  padding: 2rem 3rem;
   gap: 1rem;
+  margin-top: 4rem;
+  line-height: 1.5;
 }
-#create .optionsContainer .result span {
+#create .optionsContainer form .result span {
   color: hsl(215deg, 5%, 54%);
   opacity: 0.8;
 }
-#create .optionsContainer .result q {
+#create .optionsContainer form .result q {
   font-family: "Fraunces", sans-serif;
   color: white;
   font-weight: 700;
   font-size: 1.5rem;
 }
-#create .optionsContainer a {
+#create .optionsContainer form .result q span {
+  color: hsl(179deg, 81%, 29%);
+  opacity: 1;
+}
+#create .optionsContainer form #create_plan_result {
   text-align: center;
   width: 30%;
   background-color: hsl(179deg, 81%, 29%);
@@ -770,9 +790,107 @@ footer nav div:last-child a:hover {
   font-size: 1.2rem;
   padding: 1rem;
   border-radius: 15px;
+  margin-top: 2rem;
+  border: none;
   cursor: pointer;
   align-self: flex-end;
 }
-#create .optionsContainer a:hover {
+#create .optionsContainer form #create_plan_result:hover {
   background-color: #78d3d1;
+}
+#create .optionsContainer form #create_plan_result:disabled {
+  background-color: hsl(215deg, 5%, 54%);
+  color: white;
+}
+
+#resultsModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#resultsModal .modal {
+  z-index: 10;
+  width: 33%;
+  background-color: wheat;
+  border-radius: 15px;
+}
+#resultsModal .modal .header {
+  background-color: hsl(215deg, 19%, 25%);
+  border-radius: 15px 15px 0 0;
+  font-size: 2.1rem;
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  color: white;
+  padding: 2rem 0;
+}
+#resultsModal .modal .header h4 {
+  padding: 0 3rem;
+}
+#resultsModal .modal .content {
+  padding: 3rem 3rem;
+  background-color: hsl(43deg, 78%, 98%);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#resultsModal .modal .content q {
+  font-family: "Fraunces", sans-serif;
+  color: hsl(215deg, 5%, 54%);
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+#resultsModal .modal .content q span {
+  color: hsl(179deg, 81%, 29%);
+  opacity: 1;
+}
+#resultsModal .modal .content p {
+  color: hsl(215deg, 5%, 54%);
+  line-height: 1.5;
+}
+#resultsModal .modal .content .checkout {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+#resultsModal .modal .content .checkout .price {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "Fraunces", sans-serif;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: 50%;
+}
+#resultsModal .modal .content .checkout .price #frequencyDelivery {
+  font-size: 1.4rem;
+  color: hsl(179deg, 81%, 29%);
+}
+#resultsModal .modal .content .checkout a {
+  text-align: center;
+  width: 50%;
+  background-color: hsl(179deg, 81%, 29%);
+  font-family: "Fraunces", sans-serif;
+  font-weight: 700;
+  color: hsl(43deg, 78%, 98%);
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+}
+#resultsModal .modal .content .checkout a:hover {
+  background-color: #78d3d1;
+}
+
+#resultsModal.opened {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */

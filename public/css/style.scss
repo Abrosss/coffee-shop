@@ -6,6 +6,9 @@
     padding: 0;
 
 }
+[hidden] {
+    display: none !important;
+  }
 html, body {
     width: 100%;
     min-height: 100%;
@@ -735,9 +738,11 @@ gap: 0;
     }
     .optionsContainer {
         width: 60%;
-        display: flex;
+        
+        form {
+            display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 1rem;
         .option {
             display: flex;
             flex-direction: column;
@@ -757,6 +762,14 @@ gap: 0;
                     font-weight: 700;
                     font-size: 2.5rem;
                     color: $gray;
+                }
+                img {
+                    
+                    transition: transform .1s ease-in-out;
+                }
+                img.clicked {
+                    transform: rotate(-180deg);
+                    transition: transform .1s ease-in-out;
                 }
             }
             .options {
@@ -810,8 +823,11 @@ gap: 0;
             background-color: $blue;
             display: flex;
             flex-direction: column;
-            padding: 2rem 4rem;
+            justify-content: center;
+            padding: 2rem 3rem;
             gap: 1rem;
+            margin-top: 4rem;
+            line-height: 1.5;
             span {
                 color: $gray;
                 opacity: .8;
@@ -822,9 +838,13 @@ gap: 0;
                 font-weight: 700;
                 font-size: 1.5rem;
                 
+                span {
+                    color: $green;
+                    opacity: 1;
+                }
             }
         }
-        a {
+        #create_plan_result {
             text-align: center;
             width: 30%;
             background-color: $green;
@@ -834,13 +854,118 @@ gap: 0;
             font-size: 1.2rem;
             padding: 1rem;
             border-radius: 15px;
+            margin-top: 2rem;
+            border: none;
             cursor: pointer;
             align-self: flex-end;
             &:hover {
                 background-color: #78d3d1;
             }
+            &:disabled {
+                background-color: $gray;
+                color: white;
+            }
         }
+        }
+        
+      
     }
+}
+#resultsModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    .modal {
+        z-index: 10;
+        width: 33%;
+        background-color: wheat;
+        border-radius: 15px;
+        .header {
+            background-color: $blue;
+            border-radius: 15px 15px 0 0;
+            font-size: 2.1rem;
+            font-family: "Fraunces", sans-serif;
+            font-weight: 700;
+            color: white;
+            padding: 2rem 0;
+            h4 {
+                padding: 0 3rem;
+            }
+           
+           
+        }
+        .content {
+            padding: 3rem 3rem;
+            background-color: $lightcream;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            q {
+           font-family: "Fraunces", sans-serif;
+           color: $gray;
+           font-weight: 700;
+           font-size: 1.5rem;
+           
+           span {
+               color: $green;
+               opacity: 1;
+           }
+       }
+       p{
+        color: $gray;
+        line-height: 1.5;
+       }
+       .checkout {
+        display: flex;
+      
+        align-items: center;
+        margin-top: 2rem;
+        .price {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            font-family: "Fraunces", sans-serif;
+            color: black;
+            font-size: 1.5rem;
+            font-weight: 700;
+            width:50%;       
+        #frequencyDelivery {
+            font-size: 1.4rem;
+            color:$green
+        }
+        }
+        
+        a {
+            text-align: center;
+            width: 50%;
+            background-color: $green;
+            font-family: "Fraunces", sans-serif;
+            font-weight: 700;
+            color: $lightcream;
+            font-size: 1.1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            cursor: pointer;
+            &:hover {
+                background-color: #78d3d1;
+            }
+        }
+       }
+       }
+    }
+
+}
+#resultsModal.opened {
+    display: flex;
 }
 @media (max-width: 1000px) {
    

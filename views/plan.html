@@ -94,69 +94,87 @@
             </ul>
    
         <section class="optionsContainer">
-            <section id="preferences" class="option">
-                <button  aria-expanded="false" aria-controls="preferencesOption" type="button"><h3>How do you drink your coffee?</h3><img src="/assets/plan/desktop/icon-arrow.svg"></button>
+            <form>
+            <section id="preferences" class="option ">
+                <button  aria-expanded="true" aria-controls="preferencesOption" type="button"><h3>How do you drink your coffee?</h3><img class="clicked" src="/assets/plan/desktop/icon-arrow.svg"></button>
                 <section id="preferencesOption" class="options">
-                    <input type="radio" id="capsule" name="how" value="yes" />
+                    <input type="radio" id="capsule" name="preferences" value="Capsule" />
 		<label for="capsule">Capsule <span>Compatible with Nespresso systems and similar brewers</span></label>
-        <input type="radio" id="filter" name="how" value="yes" />
+        <input type="radio" id="filter" name="preferences" value="Filter" />
 		<label for="filter">Filter<span>For pour over or drip methods like Aeropress, Chemex, and V60</span></label>
-        <input type="radio" id="espresso" name="how" value="yes" />
+        <input type="radio" id="espresso" name="preferences" value="Espresso" />
 		<label for="espresso">Espresso<span>Dense and finely ground beans for an intense, flavorful experience</span></label>
                 </section>
             </section>
             <section class="option" id="bean-type">
-                <button><h3>What type of coffee?</h3><img src="/assets/plan/desktop/icon-arrow.svg"></button>
+                <button aria-expanded="true" type="button"><h3>What type of coffee?</h3><img class="clicked" src="/assets/plan/desktop/icon-arrow.svg"></button>
                 <section class="options">
-                    <input type="radio" id="singleOrigin" name="type" value="yes"/>
+                    <input type="radio" id="singleOrigin" name="typeofbean" value="Single Origin"/>
 		<label for="singleOrigin">Single Origin <span>Distinct, high quality coffee from a specific family-owned farm</span></label>
-        <input type="radio" id="decaf" name="type" value="yes"/>
+        <input type="radio" id="decaf" name="typeofbean" value="Decaf"/>
 		<label for="decaf">Decaf<span>Just like regular coffee, except the caffeine has been removed</span></label>
-        <input type="radio" id="blended" name="type" value="yes"/>
+        <input type="radio" id="blended" name="typeofbean" value="Blended"/>
 		<label for="blended">Blended<span>Combination of two or three dark roasted beans of organic coffees</span></label>
                 </section>
             </section>
             <section class="option" id="quantity">
-                <button><h3>How much would you like?</h3><img src="/assets/plan/desktop/icon-arrow.svg"></button>
+                <button aria-expanded="true" type="button"><h3>How much would you like?</h3><img class="clicked" src="/assets/plan/desktop/icon-arrow.svg"></button>
                 <section class="options">
-                    <input type="radio" id="quantity1" name="quantity" value="yes" />
+                    <input type="radio" id="quantity1" name="quantity" value="250g" />
 		<label for="quantity1">250g <span>Perfect for the solo drinker. Yields about 12 delicious cups.</span></label>
-        <input type="radio" id="quantity2" name="quantity" value="yes" />
+        <input type="radio" id="quantity2" name="quantity" value="500g" />
 		<label for="quantity2">500g<span>Perfect option for a couple. Yields about 40 delectable cups.</span></label>
-        <input type="radio" id="quantity3" name="quantity" value="yes" />
+        <input type="radio" id="quantity3" name="quantity" value="1000g" />
 		<label for="quantity3">1000g<span>Perfect for offices and events. Yields about 90 delightful cups.</span></label>
                 </section>
             </section>
             <section class="option" id="grind">
-                <button><h3>Want us to grind them?</h3><img src="/assets/plan/desktop/icon-arrow.svg"></button>
+                <button aria-expanded="true" type="button"><h3>Want us to grind them?</h3><img class="clicked" src="/assets/plan/desktop/icon-arrow.svg"></button>
                 <section class="options">
-                    <input type="radio" id="wholebean" name="grind" value="yes" />
+                    <input type="radio" id="wholebean" name="grind" value="Wholebean" />
 		<label for="wholebean">Wholebean <span>Best choice if you cherish the full sensory experience</span></label>
-        <input type="radio" id="filterGrind" name="grind" value="yes" />
+        <input type="radio" id="filterGrind" name="grind" value="Filter" />
 		<label for="filterGrind">Filter<span>For drip or pour-over coffee methods such as V60 or Aeropress</span></label>
-        <input type="radio" id="cafetiere" name="grind" value="yes" />
+        <input type="radio" id="cafetiere" name="grind" value="Cafetiére" />
 		<label for="cafetiere">Cafetiére<span>Course ground beans specially suited for french press coffee</span></label>
                 </section>
             </section>
             <section class="option" id="frequency">
-                <button><h3>How often should we deliver?</h3><img src="/assets/plan/desktop/icon-arrow.svg"></button>
+                <button aria-expanded="true" type="button"><h3>How often should we deliver?</h3><img class="clicked" src="/assets/plan/desktop/icon-arrow.svg"></button>
                 <section class="options">
-                    <input type="radio" id="frequency1" name="frequency" value="yes" />
+                    <input type="radio" id="frequency1" name="delivery" value="Every week" />
 		<label for="frequency1">Every week <span>$7.20 per shipment. Includes free first-class shipping.</span></label>
-        <input type="radio" id="frequency2" name="frequency" value="yes" />
+        <input type="radio" id="frequency2" name="delivery" value="Every 2 weeks" />
 		<label for="frequency2">Every 2 weeks<span>$9.60 per shipment. Includes free priority shipping.</span></label>
-        <input type="radio" id="frequency3" name="frequency" value="yes" />
+        <input type="radio" id="frequency3" name="delivery" value="Every month" />
 		<label for="frequency3">Every month<span>$12.00 per shipment. Includes free priority shipping.</span></label>
                 </section>
             </section>
             <section class="result">
                 <span>ORDER SUMMARY</span>
-                <q>I drink my coffee as <span id="coffeeOption1"></span>, with a <span id="coffeeOption2"></span> type of bean. <span id="quantity"></span> ground ala <span id="grind"></span>, sent to me <span id="frequency"></span></q>
+                <q>I drink my coffee as <span id="results_preferences">&#95 &#95 &#95 &#95 &#95 &#95 </span>, with a <span id="results_typeofbean">&#95 &#95 &#95 &#95 &#95 &#95 </span> type of bean. <span id="results_quantity">&#95 &#95 &#95 &#95 &#95 &#95 </span> ground ala <span id="results_grind">&#95 &#95 &#95 &#95 &#95 &#95 </span>, sent to me <span id="results_delivery">&#95 &#95 &#95 &#95 &#95 &#95 </span></q>
             </section>
-            <a>Create my plan!</a>
+            <button  type="submit" id="create_plan_result" disabled>Create my plan!</button>
+        </form>
         </section>
     </section>
-   
+    <section id="resultsModal">
+        <section class="modal">
+            <section class="header"><h4>Order Summary</h4></section>
+            <section class="content">
+                <q>I drink my coffee as <span id="modal_preferences"></span>, with a <span id="modal_typeofbean"></span> type of bean. <span id="modal_quantity"></span> ground ala <span id="modal_grind"></span>, sent to me <span id="modal_delivery"></span></q>
+                <p>Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. </p>
+                <section class="checkout">
+                    <span class="price">
+                        <span id="price"></span>
+                        <span id="frequencyDelivery"></span>
+                    </span>
+                    <a href="/plan">Checkout</a>
+                </section>
+            </section>
+            
+        </section>
+    </section>
     <footer>
         <nav>
             <div>
@@ -175,6 +193,6 @@
         </nav>
     </footer>
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>    -->
-    <script src="/js/main.js"></script>
+    <script src="/js/main.js" type="module"></script>
 </body>
 </html>
