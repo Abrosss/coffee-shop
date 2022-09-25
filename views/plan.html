@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Coffee shop</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body class="about">
-    <header>
-        <nav>
-        <a href="/home"><img src="/assets/logo.svg"></a>
-        <div>
-            <a href="/home">HOME</a>
-            <a href="/about">ABOUT US</a>
-            <a href="/plan">CREATE YOUR PLAN</a>
-        </div>
-        <img src="/assets/icon-hamburger.svg">
-    </nav>
+<%- include('partials/header.html') -%>
     <section class="header plan">
         <section class="content">
             <section class="text">
@@ -50,7 +25,7 @@
                 </div>
                 <div>
                     <span class="number">02</span>
-                    <h4>Choose the frequency!</h4>
+                    <h4>Choose the frequency</h4>
                     <p>Customize your order frequency, quantity, even your roast style and grind type. Pause, skip or cancel your subscription with no commitment through our online portal.</p>
                 </div>
                 <div>
@@ -167,10 +142,16 @@
                 <p>Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. </p>
                 <section class="checkout">
                     <span class="price">
-                        <span id="price"></span>
-                        <span id="frequencyDelivery"></span>
+                        <span class="priceValue"></span>
+                        <span class="frequencyDelivery"></span>
                     </span>
                     <a href="/plan">Checkout</a>
+                </section>
+                <section class="checkoutMobile">
+                    <a href="/plan">Checkout - <span class="price">
+                        <span class="priceValue"></span>
+                        <span class="frequencyDelivery"></span>
+                    </span></a>
                 </section>
             </section>
             
@@ -178,9 +159,9 @@
     </section>
     <footer>
         <nav>
-            <div>
+            <div class="footerContent">
             <a href="/"><img src="/assets/logo-white.svg"></a>
-            <div>
+            <div class="links">
                 <a href="/home">HOME</a>
                 <a href="/about">ABOUT US</a>
                 <a href="/plan">CREATE YOUR PLAN</a>

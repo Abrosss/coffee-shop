@@ -37,6 +37,8 @@ async function enterResult(e) {
 
 
 function createPlan(e) {
+  const priceValue = document.querySelectorAll('.priceValue')
+  const deliveryValue = document.querySelectorAll('.frequencyDelivery')
     e.preventDefault();
     e.stopPropagation()
     let totalPrice
@@ -56,21 +58,26 @@ function createPlan(e) {
     if(data.quantity == '1000g') frequency = 4
     if(data.delivery == 'Every week') {
       price = 7.20
-      document.getElementById('frequencyDelivery').innerText = 'week'
+      deliveryValue.forEach(value => value.innerText = 'week')
+     
     } 
     if(data.delivery == 'Every 2 weeks') {
       price = 9.60
-      document.getElementById('frequencyDelivery').innerText = '2 weeks'
+      deliveryValue.forEach(value => value.innerText = '2 weeks')
+  
  
     } 
     if(data.delivery == 'Every month') {
       price = 12.00
-      document.getElementById('frequencyDelivery').innerText = 'mo'
+      deliveryValue.forEach(value => value.innerText = 'mo')
+
     } 
 
     totalPrice = (frequency * price).toFixed(2)
-    console.log(totalPrice)
-  document.getElementById('price').innerText = '$' + totalPrice + '/'
+    console.log(priceValue)
+    priceValue.forEach(value => {
+      value.innerText = '$' + totalPrice + '/'
+    } )
   document.getElementById('resultsModal').classList.add('opened')
     }
   

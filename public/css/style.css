@@ -54,6 +54,9 @@ header nav .links a {
 header nav .links a:hover {
   color: hsl(215deg, 5%, 54%);
 }
+header nav .hamburger {
+  display: none;
+}
 header .header {
   height: 72%;
   width: 100%;
@@ -133,6 +136,7 @@ header .header.plan {
 }
 
 footer {
+  z-index: -1;
   width: 100%;
   display: flex;
   align-items: center;
@@ -804,6 +808,7 @@ footer nav div:last-child a:hover {
 }
 
 #resultsModal {
+  z-index: 20;
   position: fixed;
   top: 0;
   left: 0;
@@ -890,6 +895,12 @@ footer nav div:last-child a:hover {
 #resultsModal .modal .content .checkout a:hover {
   background-color: #78d3d1;
 }
+#resultsModal .modal .content .checkoutMobile {
+  display: none;
+}
+#resultsModal .modal .content .checkoutMobile a {
+  display: flex;
+}
 
 #resultsModal.opened {
   display: flex;
@@ -903,6 +914,7 @@ footer nav div:last-child a:hover {
     display: none;
   }
   header nav .hamburger {
+    display: block;
     width: 6%;
   }
   header .header {
@@ -930,7 +942,7 @@ footer nav div:last-child a:hover {
     width: 70%;
   }
   header .header.about, header .header.plan {
-    height: 72%;
+    height: 86%;
     width: 100%;
     background-image: url(/assets/about/desktop/image-hero-whitecup.jpg);
     background-repeat: no-repeat;
@@ -939,11 +951,14 @@ footer nav div:last-child a:hover {
     border-radius: 15px;
     justify-content: center;
   }
+  header .header.about .content, header .header.plan .content {
+    padding: 0 6%;
+  }
   header .header.about .content .text h1, header .header.plan .content .text h1 {
-    font-size: 5rem;
+    font-size: 2.8rem;
   }
   header .header.about .content .text p, header .header.plan .content .text p {
-    width: 75%;
+    width: 100%;
   }
   header .header.about .content .text h1 {
     font-size: 2.5rem;
@@ -952,7 +967,7 @@ footer nav div:last-child a:hover {
     width: 85%;
   }
   header .header.plan {
-    background-image: url(/assets/plan/desktop/image-hero-blackcup.jpg);
+    background-image: url(/assets/plan/mobile/image-hero-blackcup.jpg);
   }
   #collection {
     width: 100%;
@@ -1182,40 +1197,48 @@ footer nav div:last-child a:hover {
     display: flex;
     align-items: center;
     background-color: hsl(215deg, 19%, 25%);
-    padding: 3% 5%;
   }
   #planDetails footer nav {
+    padding: 5% 5%;
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: 3rem;
   }
   #planDetails footer nav img {
     width: 85%;
     opacity: 1;
   }
-  #planDetails footer nav div {
+  #planDetails footer nav .footerContent {
     display: flex;
+    flex-direction: column;
     gap: 2.5rem;
     align-items: center;
   }
-  #planDetails footer nav div a {
+  #planDetails footer nav .footerContent .links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  #planDetails footer nav .footerContent .links a {
     text-decoration: none;
     color: hsl(215deg, 5%, 54%);
     font-family: "Barlow", sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.8rem;
     opacity: 0.8;
   }
-  #planDetails footer nav div a:hover {
+  #planDetails footer nav .footerContent .links a:hover {
     opacity: 1;
   }
-  #planDetails footer nav div a:first-child {
+  #planDetails footer nav .footerContent .links a:first-child {
     opacity: 1;
   }
   #planDetails footer nav div:first-child {
-    gap: 5rem;
+    gap: 3rem;
   }
   #planDetails footer nav div:first-child div {
     gap: 3rem;
@@ -1229,5 +1252,419 @@ footer nav div:last-child a:hover {
   }
   #planDetails footer nav div:last-child a:hover {
     color: white;
+  }
+  #planDetails footer nav .socials {
+    flex-direction: row;
+  }
+  #planDetails.plan .content {
+    background-color: hsl(215deg, 19%, 25%);
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+  }
+  #planDetails.plan .content .middle {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    padding-left: 0%;
+  }
+  #planDetails.plan .content .middle .line {
+    margin-bottom: 2%;
+  }
+  #planDetails.plan .content .middle .line .circle {
+    background-color: transparent;
+  }
+  #planDetails.plan .content .middle .line .circle:nth-child(1) {
+    left: -15px;
+    bottom: 0;
+  }
+  #planDetails.plan .content .middle .line .circle:nth-child(2) {
+    left: 50%;
+    bottom: 0;
+  }
+  #planDetails.plan .content .middle .line .circle:nth-child(3) {
+    left: 97.5%;
+    bottom: 0;
+  }
+  #planDetails.plan .content .middle .stages {
+    gap: 0;
+    padding-bottom: 3rem;
+  }
+  #planDetails.plan .content .middle .stages div {
+    padding-top: 3rem;
+    gap: 1.5rem;
+    justify-content: flex-end;
+  }
+  #planDetails.plan .content .middle .stages div h4 {
+    color: white;
+    font-size: 1.5rem;
+  }
+  #planDetails.plan .content .middle .stages div p {
+    opacity: 0.8;
+    color: hsl(43deg, 78%, 98%);
+    width: 90%;
+  }
+  #create {
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
+    padding: 0 5%;
+    display: flex;
+    align-items: flex-start;
+    gap: 10%;
+  }
+  #create .pagination {
+    display: none;
+    width: 25%;
+  }
+  #create .pagination li {
+    border-bottom: 1px hsl(215deg, 5%, 54%) solid;
+    list-style-type: none;
+  }
+  #create .pagination li a {
+    display: flex;
+    text-decoration: none;
+    gap: 2rem;
+    font-size: 1.7rem;
+    color: hsl(215deg, 5%, 54%);
+    font-weight: 700;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    font-family: "Fraunces", sans-serif;
+    opacity: 0.8;
+  }
+  #create .pagination li a span:first-child {
+    opacity: 0.5;
+  }
+  #create .pagination li a:hover {
+    opacity: 1;
+  }
+  #create .pagination li a:hover span:first-child {
+    color: hsl(215deg, 5%, 54%);
+    opacity: 0.8;
+  }
+  #create .pagination li a.chosen {
+    color: black;
+  }
+  #create .optionsContainer {
+    width: 100%;
+  }
+  #create .optionsContainer form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  #create .optionsContainer form .option {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #create .optionsContainer form .option button {
+    display: flex;
+    outline: none;
+    border: none;
+    padding: 1.5rem 0;
+    width: 100%;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+    cursor: pointer;
+    gap: 1rem;
+  }
+  #create .optionsContainer form .option button h3 {
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: hsl(215deg, 5%, 54%);
+    text-align: left;
+  }
+  #create .optionsContainer form .option button img {
+    transition: transform 0.1s ease-in-out;
+  }
+  #create .optionsContainer form .option button img.clicked {
+    transform: rotate(-180deg);
+    transition: transform 0.1s ease-in-out;
+  }
+  #create .optionsContainer form .option .options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+  #create .optionsContainer form .option .options input {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+  }
+  #create .optionsContainer form .option .options input:checked + label {
+    background-color: hsl(179deg, 81%, 29%);
+    color: white;
+  }
+  #create .optionsContainer form .option .options input:checked + label span {
+    color: white;
+  }
+  #create .optionsContainer form .option .options label {
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 2rem 1.5rem;
+    background-color: #F4F1EB;
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    font-size: 1.3rem;
+    width: 100%;
+  }
+  #create .optionsContainer form .option .options label span {
+    display: block;
+    font-family: "Barlow", sans-serif;
+    color: hsl(215deg, 5%, 54%);
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+  #create .optionsContainer form .option .options label:hover {
+    background-color: hsl(25deg, 94%, 86%);
+  }
+  #create .optionsContainer form .result {
+    background-color: hsl(215deg, 19%, 25%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    gap: 1rem;
+    margin-top: 4rem;
+    line-height: 1.5;
+    border-radius: 8px;
+  }
+  #create .optionsContainer form .result span {
+    color: hsl(215deg, 5%, 54%);
+    opacity: 0.8;
+    font-size: 0.8rem;
+  }
+  #create .optionsContainer form .result q {
+    font-family: "Fraunces", sans-serif;
+    color: white;
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+  #create .optionsContainer form .result q span {
+    color: hsl(179deg, 81%, 29%);
+    opacity: 1;
+    font-size: 1.3rem;
+  }
+  #create .optionsContainer form #create_plan_result {
+    text-align: center;
+    width: 70%;
+    background-color: hsl(179deg, 81%, 29%);
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    color: hsl(43deg, 78%, 98%);
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 15px;
+    margin-top: 0;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+  }
+  #create .optionsContainer form #create_plan_result:hover {
+    background-color: #78d3d1;
+  }
+  #create .optionsContainer form #create_plan_result:disabled {
+    background-color: hsl(215deg, 5%, 54%);
+    color: white;
+  }
+  footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: hsl(215deg, 19%, 25%);
+  }
+  footer nav {
+    padding: 5% 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+  footer nav img {
+    width: 85%;
+    opacity: 1;
+  }
+  footer nav .footerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  footer nav .footerContent .links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  footer nav .footerContent .links a {
+    text-decoration: none;
+    color: hsl(215deg, 5%, 54%);
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+  footer nav .footerContent .links a:hover {
+    opacity: 1;
+  }
+  footer nav .footerContent .links a:first-child {
+    opacity: 1;
+  }
+  footer nav div:first-child {
+    gap: 3rem;
+  }
+  footer nav div:first-child div {
+    gap: 3rem;
+  }
+  footer nav div:last-child {
+    gap: 2rem;
+  }
+  footer nav div:last-child a {
+    opacity: 1;
+    cursor: pointer;
+  }
+  footer nav div:last-child a:hover {
+    color: white;
+  }
+  footer nav .socials {
+    flex-direction: row;
+  }
+  #resultsModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  #resultsModal .modal {
+    z-index: 15;
+    width: 90%;
+    background-color: wheat;
+    border-radius: 15px;
+  }
+  #resultsModal .modal .header {
+    background-color: hsl(215deg, 19%, 25%);
+    border-radius: 15px 15px 0 0;
+    font-size: 1.8rem;
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    color: white;
+    padding: 2rem 0;
+  }
+  #resultsModal .modal .header h4 {
+    padding: 0 3rem;
+  }
+  #resultsModal .modal .content {
+    padding: 3rem 1.5rem;
+    background-color: hsl(43deg, 78%, 98%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  #resultsModal .modal .content q {
+    font-family: "Fraunces", sans-serif;
+    color: hsl(215deg, 5%, 54%);
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  #resultsModal .modal .content q span {
+    color: hsl(179deg, 81%, 29%);
+    opacity: 1;
+  }
+  #resultsModal .modal .content p {
+    color: hsl(215deg, 5%, 54%);
+    line-height: 1.5;
+  }
+  #resultsModal .modal .content .checkout {
+    display: none;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  #resultsModal .modal .content .checkout .price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Fraunces", sans-serif;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 50%;
+  }
+  #resultsModal .modal .content .checkout .price #frequencyDelivery {
+    font-size: 1.4rem;
+    color: hsl(179deg, 81%, 29%);
+  }
+  #resultsModal .modal .content .checkout a {
+    text-align: center;
+    width: 50%;
+    background-color: hsl(179deg, 81%, 29%);
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    color: hsl(43deg, 78%, 98%);
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  #resultsModal .modal .content .checkout a:hover {
+    background-color: #78d3d1;
+  }
+  #resultsModal .modal .content .checkoutMobile {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+  }
+  #resultsModal .modal .content .checkoutMobile a {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    background-color: hsl(179deg, 81%, 29%);
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    color: hsl(43deg, 78%, 98%);
+    font-size: 1.3rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    align-items: center;
+    cursor: pointer;
+  }
+  #resultsModal .modal .content .checkoutMobile a:hover {
+    background-color: #78d3d1;
+  }
+  #resultsModal .modal .content .checkoutMobile a .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: "Fraunces", sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: 60%;
+  }
+  #resultsModal .modal .content .checkoutMobile a .price #frequencyDelivery {
+    font-size: 1.1rem;
+    color: hsl(179deg, 81%, 29%);
   }
 }/*# sourceMappingURL=style.css.map */

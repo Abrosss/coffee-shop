@@ -52,6 +52,9 @@ header {
             }
         }
     }
+    .hamburger {
+        display: none;
+    }
     
 }
 .header {
@@ -157,6 +160,7 @@ header {
 }
 }
 footer {
+    z-index: -1;
     width: 100%;
     display: flex;
     align-items: center;
@@ -872,6 +876,7 @@ gap: 0;
     }
 }
 #resultsModal {
+    z-index: 20;
     position: fixed;
     top: 0;
     left: 0;
@@ -960,6 +965,12 @@ gap: 0;
             }
         }
        }
+       .checkoutMobile {
+        display: none;
+        a {
+            display: flex;
+        }
+        }
        }
     }
 
@@ -982,6 +993,7 @@ gap: 0;
             
         }
         .hamburger {
+            display: block;
             width: 6%;
         }
         
@@ -1022,7 +1034,7 @@ gap: 0;
         }
     }
     .header.about, .header.plan {
-        height: 72%;
+        height: 86%;
         width: 100%;
         background-image: url(/assets/about/desktop/image-hero-whitecup.jpg);
         background-repeat: no-repeat;
@@ -1032,17 +1044,17 @@ gap: 0;
     
         justify-content: center;
         .content {
-    
+            padding: 0 6%;
           
             .text {
               
                 h1 {
     
-                    font-size: 5rem;
+                    font-size: 2.8rem;
     
                 }
                 p {
-                   width: 75%;
+                   width: 100%;
                 }
             }
     
@@ -1065,7 +1077,7 @@ gap: 0;
         }
     }
     .header.plan {
-        background-image: url(/assets/plan/desktop/image-hero-blackcup.jpg);
+        background-image: url(/assets/plan/mobile/image-hero-blackcup.jpg);
     }
     }
     #collection {
@@ -1313,40 +1325,49 @@ gap: 0;
             display: flex;
             align-items: center;
             background-color: $blue;
-            padding: 3% 5%;
+            
             nav {
+                padding: 5% 5%;
                 width: 100%;
                 height: 100%;
                 display: flex;
+                flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-              
+                gap: 3rem;
                
                 img {
                     width: 85%;
                     opacity: 1;
                 }
-                div {
+                .footerContent {
                     display: flex;
+                    flex-direction: column;
                     gap: 2.5rem;
                     align-items: center;
-                    a {
-                        text-decoration: none;
-                        color: $gray;
-                        font-family: "Barlow", sans-serif;
-                        font-weight: 700;
-                        font-size: 1rem;
-                        opacity: .8;
-                        &:hover {
+                    .links {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2rem;
+                        a {
+                            text-decoration: none;
+                            color: $gray;
+                            font-family: "Barlow", sans-serif;
+                            font-weight: 700;
+                            font-size: .8rem;
+                            opacity: .8;
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                        a:first-child {
                             opacity: 1;
                         }
                     }
-                    a:first-child {
-                        opacity: 1;
-                    }
+                  
                 }
                 div:first-child {
-                    gap: 5rem;
+                    gap: 3rem;
                     div {
                         gap: 3rem;
                     }
@@ -1361,7 +1382,443 @@ gap: 0;
                         }
                     }
                 }
+                .socials {
+                    flex-direction: row;
+                }
             }
         }
+    }
+    #planDetails.plan {
+ 
+        .content {
+            background-color: $blue;
+            border-radius: 15px;
+            align-items: center;
+            justify-content: center;
+            .middle {
+                height: min-content;
+                padding-left: 0%;
+                .line {
+                    margin-bottom: 2%;
+                    .circle {
+                        background-color: transparent;
+                        &:nth-child(1) {
+                            left: -15px;
+                            bottom: 0;
+                           }
+                           &:nth-child(2) {
+                            left: 50%;
+                            bottom: 0;
+                           }
+                           &:nth-child(3) {
+                            left: 97.5%;
+                            bottom: 0;
+                           }
+                    }
+                }
+                .stages {
+                    gap: 0;
+                    padding-bottom: 3rem;
+                    div {
+                        padding-top: 3rem;
+                        gap: 1.5rem;
+                        justify-content: flex-end;
+                        h4 {
+                            color: white;
+                            font-size: 1.5rem;
+                        }
+                        p {
+                            opacity: .8;
+                            color: $lightcream;
+                            width: 90%;
+                        }
+                    }
+                   
+                }
+            }
+        }
+        
+    }
+    #create {
+        height: min-content;
+        padding: 0 5%;
+        display: flex;
+        align-items: flex-start;
+        gap: 10%;
+        .pagination {
+            display: none;
+            width: 25%;
+            li {
+                border-bottom: 1px $gray solid;
+                list-style-type: none;
+                a {
+                display: flex;
+                text-decoration: none;
+                gap: 2rem;
+                font-size: 1.7rem;
+                color: $gray;
+                font-weight: 700;
+                padding: 1.5rem 0;
+                cursor: pointer;
+                font-family: "Fraunces", sans-serif;
+                opacity: .8;
+                span:first-child {
+                  
+                    opacity: .5;
+                    
+                }
+                &:hover {
+                    opacity: 1;;
+                    span:first-child {
+                        color: $gray;
+                        opacity: .8;
+                    }
+                }
+            }
+                a.chosen {
+                    color: black;
+                }
+            }
+        }
+        .optionsContainer {
+            width: 100%;
+            
+            form {
+                display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            .option {
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                button {
+                    display: flex;
+                    outline: none;
+                    border: none;
+                    padding: 1.5rem 0;
+                    width: 100%;
+                    justify-content: space-between;
+                    background-color: transparent;
+                    align-items: center;
+                    cursor: pointer;
+                    gap: 1rem;
+                    h3 {
+                        font-family: "Fraunces", sans-serif;
+                        font-weight: 700;
+                        font-size: 1.5rem;
+                        color: $gray;
+                        text-align: left;
+                    }
+                    img {
+                        
+                        transition: transform .1s ease-in-out;
+                    }
+                    img.clicked {
+                        transform: rotate(-180deg);
+                        transition: transform .1s ease-in-out;
+                    }
+                }
+                .options {
+                    display: flex;
+                    flex-direction: column;
+                  gap: 1.5rem;
+                  width: 100%;
+                 
+                    input {
+                        position: fixed;
+                        opacity: 0;
+                        pointer-events: none;
+                       
+                    }
+                    input:checked + label{
+                        background-color: $green;
+                    color: white;
+                    span {
+                        color: white;
+                    }
+                    }
+                    label {
+                        cursor: pointer;
+                        border-radius: 8px;
+                        padding: 2rem 1.5rem;
+                        
+                        background-color: #F4F1EB;
+                        font-family: "Fraunces", sans-serif;
+                        font-weight: 700;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.5rem;
+                        font-size: 1.3rem;
+                        width: 100%;
+                     span {
+                        display: block;
+                        font-family: "Barlow", sans-serif;
+                        color: $gray;
+                        font-weight: 400;
+                        line-height: 1.5;
+                        font-size: 1rem;
+                     }
+                     &:hover {
+                        background-color: $peach;
+                        
+                     }
+                    
+                    }
+                }
+            }
+            .result {
+                background-color: $blue;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 2rem 1.5rem;
+                gap: 1rem;
+                margin-top: 4rem;
+                line-height: 1.5;
+                border-radius: 8px;
+                span {
+                    color: $gray;
+                    opacity: .8;
+                    font-size: .8rem;
+                }
+                q {
+                    font-family: "Fraunces", sans-serif;
+                    color: white;
+                    font-weight: 700;
+                    font-size: 1.3rem;
+                    
+                    span {
+                        color: $green;
+                        opacity: 1;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+            #create_plan_result {
+                text-align: center;
+                width: 70%;
+                background-color: $green;
+                font-family: "Fraunces", sans-serif;
+                font-weight: 700;
+                color: $lightcream;
+                font-size: 1.2rem;
+                padding: 1rem;
+                border-radius: 15px;
+                margin-top: 0;
+                border: none;
+                cursor: pointer;
+                align-self: center;
+                &:hover {
+                    background-color: #78d3d1;
+                }
+                &:disabled {
+                    background-color: $gray;
+                    color: white;
+                }
+            }
+            }
+            
+          
+        }
+    }
+    footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: $blue;
+        
+        nav {
+            padding: 5% 5%;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3rem;
+           
+            img {
+                width: 85%;
+                opacity: 1;
+            }
+            .footerContent {
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+                align-items: center;
+                .links {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    a {
+                        text-decoration: none;
+                        color: $gray;
+                        font-family: "Barlow", sans-serif;
+                        font-weight: 700;
+                        font-size: .8rem;
+                        opacity: .8;
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                    a:first-child {
+                        opacity: 1;
+                    }
+                }
+              
+            }
+            div:first-child {
+                gap: 3rem;
+                div {
+                    gap: 3rem;
+                }
+            }
+            div:last-child {
+                gap: 2rem;
+                a {
+                    opacity: 1;
+                    cursor: pointer;
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+            .socials {
+                flex-direction: row;
+            }
+        }
+    }
+    #resultsModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        .modal {
+            z-index: 15;
+            width: 90%;
+            background-color: wheat;
+            border-radius: 15px;
+            .header {
+                background-color: $blue;
+                border-radius: 15px 15px 0 0;
+                font-size: 1.8rem;
+                font-family: "Fraunces", sans-serif;
+                font-weight: 700;
+                color: white;
+                padding: 2rem 0;
+                h4 {
+                    padding: 0 3rem;
+                }
+               
+               
+            }
+            .content {
+                padding: 3rem 1.5rem;
+                background-color: $lightcream;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                q {
+               font-family: "Fraunces", sans-serif;
+               color: $gray;
+               font-weight: 700;
+               font-size: 1.5rem;
+               
+               span {
+                   color: $green;
+                   opacity: 1;
+               }
+           }
+           p{
+            color: $gray;
+            line-height: 1.5;
+           }
+           .checkout {
+            display: none;
+          
+            align-items: center;
+            margin-top: 2rem;
+            .price {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                font-family: "Fraunces", sans-serif;
+                color: black;
+                font-size: 1.5rem;
+                font-weight: 700;
+                width:50%;       
+            #frequencyDelivery {
+                font-size: 1.4rem;
+                color:$green
+            }
+            }
+            
+            a {
+                text-align: center;
+                width: 50%;
+                background-color: $green;
+                font-family: "Fraunces", sans-serif;
+                font-weight: 700;
+                color: $lightcream;
+                font-size: 1.1rem;
+                padding: 1rem;
+                border-radius: 8px;
+                text-decoration: none;
+                cursor: pointer;
+                &:hover {
+                    background-color: #78d3d1;
+                }
+            }
+           }
+           .checkoutMobile {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+            width: 100%;
+            a {
+                text-align: center;
+                justify-content: center;
+                width: 100%;
+                background-color: $green;
+                font-family: "Fraunces", sans-serif;
+                font-weight: 700;
+                color: $lightcream;
+                font-size: 1.3rem;
+                padding: 1rem;
+                border-radius: 8px;
+                text-decoration: none;
+                align-items: center;
+                cursor: pointer;
+                &:hover {
+                    background-color: #78d3d1;
+                }
+                .price {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: .5rem;
+                    font-family: "Fraunces", sans-serif;
+                    color: white;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    width:60%;       
+                #frequencyDelivery {
+                    font-size: 1.1rem;
+                    color:$green
+                }
+                }
+            }
+           }
+           }
+        }
+    
     }
    }
