@@ -6,13 +6,20 @@ const options = document.querySelectorAll('.optionsContainer button')
 const labels = document.querySelectorAll('.optionsContainer label')
 const createPlanButton = document.querySelector('#create_plan_result')
 const modal = document.querySelector('#resultsModal')
+const hamburger = document.querySelector('nav .hamburger')
 
+hamburger.addEventListener('click', toggleMenu)
 
-paginationLinks.forEach(link => link.addEventListener('click', makeActive))
-options.forEach(button => button.addEventListener('click', openOptions))
-labels.forEach(label => label.addEventListener('click', enterResult))
-createPlanButton.addEventListener('click', createPlan)
-modal.addEventListener('click', (e) => {
+function toggleMenu(e) {
+  
+  document.querySelector('.linksMobile').classList.toggle('opened')
+}
+
+if(paginationLinks) paginationLinks.forEach(link => link.addEventListener('click', makeActive))
+if (options) options.forEach(button => button.addEventListener('click', openOptions))
+if (labels) labels.forEach(label => label.addEventListener('click', enterResult))
+if(createPlanButton) createPlanButton.addEventListener('click', createPlan)
+if(modal) modal.addEventListener('click', (e) => {
   if(e.target.classList.contains('opened')) modal.classList.remove('opened')
 })
 

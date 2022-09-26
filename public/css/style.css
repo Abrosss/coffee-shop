@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 [hidden] {
   display: none !important;
 }
@@ -56,6 +60,15 @@ header nav .links a:hover {
 }
 header nav .hamburger {
   display: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+header .linksMobile {
+  display: none;
+  z-index: 20;
 }
 header .header {
   height: 72%;
@@ -907,6 +920,9 @@ footer nav div:last-child a:hover {
 }
 
 @media (max-width: 1000px) {
+  header {
+    position: relative;
+  }
   header nav img {
     width: 75%;
   }
@@ -916,6 +932,31 @@ footer nav div:last-child a:hover {
   header nav .hamburger {
     display: block;
     width: 6%;
+  }
+  header .linksMobile {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(to bottom, hsl(43deg, 78%, 98%) 45%, hsla(43deg, 78%, 98%, 0.1));
+    height: 100%;
+    width: 100%;
+    bottom: -14%;
+    align-items: center;
+    gap: 2.4rem;
+    padding-top: 15%;
+  }
+  header .linksMobile a {
+    text-decoration: none;
+    color: hsl(215deg, 19%, 25%);
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  header .linksMobile a:hover {
+    color: hsl(215deg, 5%, 54%);
+  }
+  header .linksMobile.opened {
+    display: flex;
   }
   header .header {
     height: 86%;
@@ -944,7 +985,7 @@ footer nav div:last-child a:hover {
   header .header.about, header .header.plan {
     height: 86%;
     width: 100%;
-    background-image: url(/assets/about/desktop/image-hero-whitecup.jpg);
+    background-image: url(/assets/about/mobile/image-hero-whitecup.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right;
@@ -964,7 +1005,7 @@ footer nav div:last-child a:hover {
     font-size: 2.5rem;
   }
   header .header.about .content .text p {
-    width: 85%;
+    width: 100%;
   }
   header .header.plan {
     background-image: url(/assets/plan/mobile/image-hero-blackcup.jpg);
@@ -1014,6 +1055,47 @@ footer nav div:last-child a:hover {
     color: hsl(215deg, 5%, 54%);
     line-height: 1.5;
     text-align: center;
+  }
+  #collection.about {
+    justify-content: center;
+  }
+  #collection.about .content {
+    padding-top: 25%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  #collection.about .content section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #collection.about .content section:first-child img {
+    border-radius: 15px;
+    max-width: 100%;
+    max-height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #collection.about .content section:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+  #collection.about .content section:last-child h2 {
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    font-size: 2.3rem;
+    color: hsl(215deg, 19%, 25%);
+  }
+  #collection.about .content section:last-child p {
+    color: hsl(215deg, 5%, 54%);
+    line-height: 1.7;
   }
   #features {
     position: relative;
@@ -1087,6 +1169,47 @@ footer nav div:last-child a:hover {
     opacity: 0.8;
     width: 70%;
     line-height: 1.8;
+  }
+  #features.about {
+    padding: 0;
+    padding-top: 25%;
+  }
+  #features.about .header {
+    width: 100%;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 4rem;
+    padding-bottom: 15%;
+  }
+  #features.about .header section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #features.about .header .text {
+    text-align: center;
+    padding-top: 0;
+    padding: 0 8%;
+    align-items: center;
+    text-align: center;
+  }
+  #features.about .header .text h4 {
+    font-size: 1.8rem;
+  }
+  #features.about .header .text p {
+    width: 100%;
+  }
+  #features.about .header section:last-child {
+    background-image: url(/assets/about/mobile/image-quality.jpg);
+    background-size: cover;
+    width: 80%;
+    height: 10rem;
+    margin-top: -25%;
+    border-radius: 15px;
+  }
+  #features.about .header section:last-child img {
+    display: none;
   }
   #planDetails {
     display: flex;
@@ -1303,6 +1426,97 @@ footer nav div:last-child a:hover {
     opacity: 0.8;
     color: hsl(43deg, 78%, 98%);
     width: 90%;
+  }
+  #planDetails.about {
+    padding: 0;
+    padding-bottom: 5rem;
+    gap: 0;
+  }
+  #planDetails.about .content {
+    justify-content: center;
+    padding-top: 25%;
+  }
+  #planDetails.about .content .middle {
+    padding-left: 5%;
+  }
+  #planDetails.about .content .middle h5 {
+    font-size: 1.6rem;
+  }
+  #planDetails.about .content .middle .stages {
+    align-items: center;
+  }
+  #planDetails.about .content .middle .stages div {
+    gap: 2rem;
+  }
+  #planDetails.about .content .middle .stages div .imageContainer {
+    display: flex;
+    align-items: flex-end;
+    width: 20%;
+    margin-bottom: 8%;
+  }
+  #planDetails.about .content .middle .stages div h4 {
+    width: 100%;
+  }
+  #planDetails.about .content .middle .stages div p {
+    width: 100%;
+  }
+  #planDetails.about .content .middle .stages div p span {
+    display: block;
+  }
+  #planDetails.about footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: hsl(215deg, 19%, 25%);
+    padding: 3% 5%;
+    margin-top: 20%;
+  }
+  #planDetails.about footer nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #planDetails.about footer nav img {
+    width: 85%;
+    opacity: 1;
+  }
+  #planDetails.about footer nav .footerContent {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
+  }
+  #planDetails.about footer nav .footerContent a {
+    text-decoration: none;
+    color: hsl(215deg, 5%, 54%);
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+  #planDetails.about footer nav .footerContent a:hover {
+    opacity: 1;
+  }
+  #planDetails.about footer nav .footerContent a:first-child {
+    opacity: 1;
+  }
+  #planDetails.about footer nav div:first-child {
+    gap: 3rem;
+  }
+  #planDetails.about footer nav div:first-child div {
+    gap: 3rem;
+  }
+  #planDetails.about footer nav div:last-child {
+    gap: 2rem;
+  }
+  #planDetails.about footer nav div:last-child a {
+    opacity: 1;
+    cursor: pointer;
+  }
+  #planDetails.about footer nav div:last-child a:hover {
+    color: white;
   }
   #create {
     height: -webkit-min-content;
