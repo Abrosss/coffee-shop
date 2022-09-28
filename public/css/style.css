@@ -496,6 +496,7 @@ footer nav div:last-child a:hover {
   align-items: center;
   background-color: hsl(215deg, 19%, 25%);
   padding: 3% 5%;
+  z-index: 5;
 }
 #planDetails footer nav {
   width: 100%;
@@ -585,6 +586,7 @@ footer nav div:last-child a:hover {
   align-items: center;
   background-color: hsl(215deg, 19%, 25%);
   padding: 3% 5%;
+  z-index: 5;
 }
 #planDetails.about footer nav {
   width: 100%;
@@ -1338,6 +1340,7 @@ footer nav div:last-child a:hover {
     display: flex;
     align-items: center;
     background-color: hsl(215deg, 19%, 25%);
+    z-index: 5;
   }
   #planDetails footer nav {
     padding: 5% 5%;
@@ -1488,6 +1491,7 @@ footer nav div:last-child a:hover {
     background-color: hsl(215deg, 19%, 25%);
     padding: 3% 5%;
     margin-top: 20%;
+    z-index: 5;
   }
   #planDetails.about footer nav {
     width: 100%;
