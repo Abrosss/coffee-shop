@@ -7,7 +7,8 @@ require("dotenv").config({ path: "./config/.env" });
 
 
 //Static Folder
-app.use(express.static("public"));
+
+app.use(express.static(path.join(__dirname + "/public")))
 app.set('views', __dirname + '/views');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
