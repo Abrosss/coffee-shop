@@ -1,7 +1,7 @@
 
 //adds an active class 
 
-export function makeActive(e) {
+export default function makeActive(e) {
     e.stopPropagation()
     var elems = document.querySelector(".chosen");
     if(elems !==null){
@@ -10,7 +10,7 @@ export function makeActive(e) {
    e.currentTarget.className = "chosen";
   }
 //expands options
-export function openOptions(e) {
+export default function openOptions(e) {
     e.stopPropagation()
     const arrow = e.currentTarget.querySelector('img')
     let value = e.currentTarget.getAttribute("aria-expanded");
@@ -25,7 +25,7 @@ export function openOptions(e) {
       }
 
 }
-export function allChecked(inputs) {
+export default function allChecked(inputs) {
 
   let count = 0;
   for (var  i = 0; i < inputs.length; i++) {
