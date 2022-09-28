@@ -4,7 +4,7 @@ const mainController = require("../controllers/main");
 
 
 //Main Routes - simplified for now
-router.get("/home", mainController.getHome);
+router.get("/", mainController.getHome);
 router.get("/about", mainController.getAbout);
 router.get("/plan", mainController.getPlan);
 // router.get("/feed", ensureAuth, postsController.getFeed);
