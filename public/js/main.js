@@ -99,7 +99,7 @@ function createPlan(e) {
       const arrow = e.currentTarget.querySelector('img')
       let value = e.currentTarget.getAttribute("aria-expanded");
       let content = e.currentTarget.nextElementSibling
-      arrow.classList.toggle('clicked')
+     if(arrow) arrow.classList.toggle('clicked')
       if (value == "true") {
           e.currentTarget.setAttribute("aria-expanded", "false");
           content.setAttribute("hidden", "");
