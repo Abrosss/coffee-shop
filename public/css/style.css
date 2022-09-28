@@ -212,13 +212,24 @@ footer nav div:last-child a:hover {
   align-items: center;
 }
 #collection .header {
-  padding-top: 8%;
+  padding-top: 0;
 }
 #collection .header h2 {
+  position: relative;
   font-family: "Fraunces", sans-serif;
   font-size: 11rem;
   color: hsl(215deg, 5%, 54%);
   opacity: 0.8;
+}
+#collection .header h2:after {
+  height: 100%;
+  width: 100%;
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(rgba(246, 246, 246, 0.1) 0%, hsl(43deg, 78%, 98%) 100%);
+  top: 0;
+  left: 0;
+  bottom: 2rem;
 }
 #collection .content {
   width: 76%;
@@ -235,18 +246,25 @@ footer nav div:last-child a:hover {
   z-index: 2;
 }
 #collection .content div img {
-  width: 80%;
+  width: 90%;
   margin-bottom: 10%;
 }
-#collection .content div h4 {
-  font-family: "Fraunces", sans-serif;
-  font-weight: 700;
-  font-size: 1.3rem;
+#collection .content div .text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
-#collection .content div p {
+#collection .content div .text h4 {
+  font-family: "Fraunces", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: hsl(215deg, 19%, 25%);
+}
+#collection .content div .text p {
   color: hsl(215deg, 5%, 54%);
   line-height: 1.5;
   text-align: center;
+  font-weight: 500;
 }
 
 #collection.about {
@@ -1880,5 +1898,412 @@ footer nav div:last-child a:hover {
   #resultsModal .modal .content .checkoutMobile a .price #frequencyDelivery {
     font-size: 1.1rem;
     color: hsl(179deg, 81%, 29%);
+  }
+}
+@media only screen and (min-width: 1001px) and (max-width: 1281px) {
+  header {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  header nav {
+    width: 100%;
+    height: 14%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header nav img {
+    width: 85%;
+  }
+  header nav .links {
+    display: flex;
+    gap: 2.5rem;
+  }
+  header nav .links a {
+    text-decoration: none;
+    color: black;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    opacity: 0.8;
+  }
+  header nav .links a:hover {
+    color: hsl(215deg, 5%, 54%);
+  }
+  header nav .hamburger {
+    display: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  header .linksMobile {
+    display: none;
+    z-index: 20;
+  }
+  header .header {
+    height: 86%;
+    width: 100%;
+    background-image: url(/assets/home/tablet/image-hero-coffeepress.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+  }
+  header .header .content {
+    display: flex;
+    width: 60%;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 5%;
+    justify-content: center;
+    height: 100%;
+  }
+  header .header .content .text {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  header .header .content .text h1 {
+    font-family: "Fraunces", sans-serif;
+    font-size: 4rem;
+    line-height: 0.8;
+    color: hsl(43deg, 78%, 98%);
+  }
+  header .header .content .text p {
+    font-family: "Barlow", sans-serif;
+    font-size: 1rem;
+    color: hsl(43deg, 78%, 98%);
+    opacity: 0.8;
+    line-height: 1.9;
+    width: 100%;
+  }
+  header .header .content a {
+    text-align: center;
+    width: 60%;
+    background-color: hsl(179deg, 81%, 29%);
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    color: hsl(43deg, 78%, 98%);
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  header .header .content a:hover {
+    background-color: #78d3d1;
+  }
+  header .header.about, header .header.plan {
+    height: 72%;
+    width: 100%;
+    background-image: url(/assets/about/desktop/image-hero-whitecup.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    border-radius: 15px;
+    justify-content: center;
+  }
+  header .header.about .content .text h1, header .header.plan .content .text h1 {
+    font-size: 5rem;
+  }
+  header .header.about .content .text p, header .header.plan .content .text p {
+    width: 75%;
+  }
+  header .header.about .content .text h1 {
+    font-size: 2.5rem;
+  }
+  header .header.about .content .text p {
+    width: 85%;
+  }
+  header .header.plan {
+    background-image: url(/assets/plan/desktop/image-hero-blackcup.jpg);
+  }
+  #collection {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #collection .header {
+    padding-top: 8%;
+  }
+  #collection .header h2 {
+    font-family: "Fraunces", sans-serif;
+    font-size: 9.5rem;
+    color: hsl(215deg, 5%, 54%);
+    opacity: 0.8;
+  }
+  #collection .content {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  #collection .content div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    margin-top: -8%;
+    z-index: 2;
+    text-align: left;
+  }
+  #collection .content div img {
+    width: 50%;
+    margin-bottom: 10%;
+  }
+  #collection .content div .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #collection .content div .text h4 {
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+  #collection .content div .text p {
+    color: hsl(215deg, 5%, 54%);
+    line-height: 1.5;
+    text-align: left;
+    font-size: 1.4rem;
+  }
+  #features {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    padding: 5% 0;
+  }
+  #features .header {
+    height: 80%;
+    border-radius: 15px;
+    background-color: hsl(215deg, 19%, 25%);
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60%;
+  }
+  #features .header .text {
+    text-align: center;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    color: hsl(43deg, 78%, 98%);
+    width: 50%;
+  }
+  #features .header .text h4 {
+    font-family: "Fraunces", sans-serif;
+    font-size: 3rem;
+  }
+  #features .header .text p {
+    opacity: 0.7;
+    line-height: 1.8;
+    width: 80%;
+  }
+  #features .featuresList {
+    position: relative;
+    bottom: 0;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: -53%;
+  }
+  #features .featuresList div {
+    border-radius: 15px;
+    padding-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: hsl(179deg, 81%, 29%);
+    width: 100%;
+  }
+  #features .featuresList div img {
+    padding: 3rem 0;
+  }
+  #features .featuresList div h5 {
+    font-family: "Fraunces", sans-serif;
+    font-size: 1.7rem;
+    color: hsl(43deg, 78%, 98%);
+    padding-bottom: 2rem;
+  }
+  #features .featuresList div p {
+    color: hsl(43deg, 78%, 98%);
+    opacity: 0.8;
+    width: 70%;
+    line-height: 1.8;
+  }
+  #planDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem 0;
+    gap: 5rem;
+  }
+  #planDetails .content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #planDetails .content .middle {
+    gap: 3.5rem;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  #planDetails .content .middle h5 {
+    color: hsl(215deg, 5%, 54%);
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  #planDetails .content .middle .line {
+    min-height: 2px;
+    background-color: hsl(25deg, 94%, 86%);
+    width: 57%;
+    position: relative;
+  }
+  #planDetails .content .middle .line .circle {
+    width: 2px;
+    height: 2px;
+    border: 1px hsl(179deg, 81%, 29%) solid;
+    border-radius: 50%;
+    padding: 1rem 1rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: hsl(43deg, 78%, 98%);
+    transform: translateY(50%);
+  }
+  #planDetails .content .middle .line .circle:nth-child(1) {
+    left: 0;
+    bottom: 0;
+  }
+  #planDetails .content .middle .line .circle:nth-child(2) {
+    left: 50%;
+    bottom: 0;
+  }
+  #planDetails .content .middle .line .circle:nth-child(3) {
+    left: 100%;
+    bottom: 0;
+  }
+  #planDetails .content .middle .stages {
+    display: flex;
+    width: 80%;
+    gap: 5rem;
+  }
+  #planDetails .content .middle .stages div {
+    width: 33.3%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  #planDetails .content .middle .stages div .number {
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    color: hsl(25deg, 94%, 86%);
+    font-size: 5rem;
+  }
+  #planDetails .content .middle .stages div h4 {
+    font-family: "Fraunces", sans-serif;
+    font-size: 1.8rem;
+    word-wrap: break-word;
+    width: 80%;
+  }
+  #planDetails .content .middle .stages div p {
+    color: hsl(215deg, 5%, 54%);
+    width: 90%;
+    line-height: 1.5;
+  }
+  #planDetails .content .middle a {
+    text-align: center;
+    width: 20%;
+    background-color: hsl(179deg, 81%, 29%);
+    font-family: "Fraunces", sans-serif;
+    font-weight: 700;
+    color: hsl(43deg, 78%, 98%);
+    font-size: 1.2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  #planDetails .content .middle a:hover {
+    background-color: #78d3d1;
+  }
+  #planDetails footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: hsl(215deg, 19%, 25%);
+  }
+  #planDetails footer nav {
+    padding: 5% 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+  #planDetails footer nav img {
+    width: 85%;
+    opacity: 1;
+  }
+  #planDetails footer nav .footerContent {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+  }
+  #planDetails footer nav .footerContent .links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  #planDetails footer nav .footerContent .links a {
+    text-decoration: none;
+    color: hsl(215deg, 5%, 54%);
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+  #planDetails footer nav .footerContent .links a:hover {
+    opacity: 1;
+  }
+  #planDetails footer nav .footerContent .links a:first-child {
+    opacity: 1;
+  }
+  #planDetails footer nav div:first-child {
+    gap: 3rem;
+  }
+  #planDetails footer nav div:first-child div {
+    gap: 3rem;
+  }
+  #planDetails footer nav div:last-child {
+    gap: 2rem;
+  }
+  #planDetails footer nav div:last-child a {
+    opacity: 1;
+    cursor: pointer;
+  }
+  #planDetails footer nav div:last-child a:hover {
+    color: white;
+  }
+  #planDetails footer nav .socials {
+    flex-direction: row;
   }
 }/*# sourceMappingURL=style.css.map */

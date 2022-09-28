@@ -235,12 +235,26 @@ footer {
     flex-direction: column;
     align-items: center;
     .header {
-        padding-top: 8%;
+        padding-top: 0;
+        
         h2 {
+            position: relative;
             font-family: "Fraunces", sans-serif;
             font-size: 11rem;
             color: $gray;
             opacity: .8;
+            
+           
+        }
+        h2:after {
+            height: 100%;
+            width: 100%;
+            content: '';
+            position: absolute;
+            background-image: linear-gradient(rgba(246, 246, 246, .1) 0%, $lightcream 100%);
+            top: 0;
+            left: 0;
+            bottom: 2rem;
         }
     }
     .content {
@@ -258,20 +272,28 @@ footer {
             z-index: 2;
     
             img {
-                width: 80%;
+                width: 90%;
                 margin-bottom: 10%;
             }
-            h4 {
-                font-family: "Fraunces", sans-serif;
-                font-weight: 700;
-                font-size: 1.3rem;
+            .text {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                h4 {
+                    font-family: "Fraunces", sans-serif;
+                    font-weight: 800;
+                    font-size: 1.5rem;
+                    color: $blue;
+                }
+                p{
+                     color: $gray;
+                     line-height: 1.5;
+                     text-align: center;
+                     font-weight: 500;
+    
+                }
             }
-            p{
-                 color: $gray;
-                 line-height: 1.5;
-                 text-align: center;
-
-            }
+           
         }
     }
     
@@ -2048,3 +2070,454 @@ gap: 0;
     
     }
    }
+@media only screen and (min-width: 1001px) and (max-width: 1281px) {
+    header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        nav {
+        width: 100%;
+        height: 14%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+            
+       
+        img {
+            width: 85%;
+        }
+        .links {
+            display: flex;
+            gap: 2.5rem;
+            a {
+                text-decoration: none;
+                color: black;
+                font-family: "Barlow", sans-serif;
+                font-weight: 700;
+                font-size: 1rem;
+                opacity: .8;
+                &:hover {
+                    color: $gray;
+                }
+            }
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+    }
+    .linksMobile {
+        display: none;
+        z-index: 20;
+    }
+    
+    .header {
+        height: 86%;
+        width: 100%;
+        background-image: url(/assets/home/tablet/image-hero-coffeepress.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 15px;
+        
+        .content {
+            display: flex;
+            width: 60%;
+            flex-direction: column;
+            gap: 3rem;
+            padding: 0 5%;
+            justify-content: center;
+            height: 100%;
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+                h1 {
+                    font-family: "Fraunces", sans-serif;
+                    font-size: 4rem;
+                    line-height: .8;
+                    color: $lightcream;
+    
+                }
+                p {
+                    font-family: "Barlow", sans-serif;
+                    font-size: 1rem;
+                    color: $lightcream;
+                    opacity: .8;
+                    line-height: 1.9;
+                    width: 100%;
+                }
+            }
+    
+            a {
+                text-align: center;
+                width: 60%;
+                background-color: $green;
+                font-family: "Fraunces", sans-serif;
+                font-weight: 700;
+                color: $lightcream;
+                font-size: 1.1rem;
+                padding: 1rem;
+                border-radius: 8px;
+                text-decoration: none;
+                cursor: pointer;
+                &:hover {
+                    background-color: #78d3d1;
+                }
+            }
+        }
+    }
+    .header.about, .header.plan {
+        height: 72%;
+        width: 100%;
+        background-image: url(/assets/about/desktop/image-hero-whitecup.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        border-radius: 15px;
+    
+        justify-content: center;
+        .content {
+    
+          
+            .text {
+              
+                h1 {
+    
+                    font-size: 5rem;
+    
+                }
+                p {
+                   width: 75%;
+                }
+            }
+    
+          
+        }
+    }
+    .header.about {
+        .content {
+            .text {
+                h1 {
+    
+                    font-size: 2.5rem;
+                }
+                p {
+                   width: 85%;
+                }
+            }
+    
+          
+        }
+    }
+    .header.plan {
+        background-image: url(/assets/plan/desktop/image-hero-blackcup.jpg);
+    }
+    }
+    #collection {
+   
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .header {
+            padding-top: 8%;
+            h2 {
+                font-family: "Fraunces", sans-serif;
+                font-size: 9.5rem;
+                color: $gray;
+                opacity: .8;
+            }
+        }
+        .content {
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+          
+            div {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 2rem;
+                margin-top: -8%;
+                z-index: 2;
+                text-align: left;
+                img {
+                    width: 50%;
+                    margin-bottom: 10%;
+                }
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                   
+                    h4 {
+                        font-family: "Fraunces", sans-serif;
+                        font-weight: 700;
+                        font-size: 1.8rem;
+                    }
+                    p{
+                         color: $gray;
+                         line-height: 1.5;
+                         text-align: left;
+                         font-size: 1.4rem;
+        
+                    }
+                }
+                
+            }
+        }
+        
+    }
+    #features {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+      padding: 5% 0;
+     
+        .header {
+            height: 80%;
+            border-radius: 15px;
+            background-color: $blue;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 60%;
+            .text {
+            text-align: center;
+            padding-top: 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            color: $lightcream;
+            width: 50%;
+            h4 {
+                font-family: "Fraunces", sans-serif;
+                font-size: 3rem;
+            }
+            p {
+                opacity: .7;
+                line-height: 1.8;
+                width: 80%;
+            }
+            }
+        }
+        .featuresList {
+            position: relative;
+            bottom: 0;
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: -53%;
+            div {
+            
+               border-radius: 15px;
+                padding-bottom: 3rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background-color: $green;
+                width: 100%;
+          
+                img {
+                    padding: 3rem 0;
+                }
+                h5 {
+                    font-family: "Fraunces", sans-serif;
+                    font-size: 1.7rem;
+                    color: $lightcream;
+                    padding-bottom: 2rem;
+                }
+                p {
+                    color: $lightcream;
+                    opacity: .8;
+                    width: 70%;
+                    line-height: 1.8;
+                }
+            }
+        }
+    }
+    #planDetails {
+    
+        display: flex;
+        flex-direction: column;
+      align-items: center;
+       padding: 5rem 0;
+       gap: 5rem;
+        .content {
+            height: 100vh;
+        display: flex;
+        flex-direction: column;
+       
+        width: 100%;
+        
+    
+        .middle {
+            gap: 3.5rem;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            h5 {
+                color: $gray;
+                font-family: "Fraunces", sans-serif;
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+            .line {
+                min-height: 2px;
+                background-color: $peach;
+                width: 57%;
+                position: relative;
+             
+                .circle {
+                    width: 2px;
+                    height: 2px;
+                    border: 1px $green solid;
+                    border-radius: 50%;
+                    padding: 1rem 1rem;
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    background-color: $lightcream;
+                    transform: translateY(50%);
+                   &:nth-child(1) {
+                    left: 0;
+                    bottom: 0;
+                   }
+                   &:nth-child(2) {
+                    left: 50%;
+                    bottom: 0;
+                   }
+                   &:nth-child(3) {
+                    left: 100%;
+                    bottom: 0;
+                   }
+                }
+            
+            }
+            .stages {
+                display: flex;
+                width: 80%;
+                gap: 5rem;
+                div {
+                    width: 33.3%;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2rem;
+                    .number {
+                        font-family: "Fraunces", sans-serif;
+                        font-weight: 700;
+                        color: $peach;
+                        font-size: 5rem;
+                    }
+                    h4 {
+                        font-family: "Fraunces", sans-serif;
+                        font-size: 1.8rem;
+                        word-wrap: break-word;
+                        width: 80%;
+                    }
+                    p{
+                        color: $gray;
+                        width: 90%;
+                        line-height: 1.5;
+                    }
+                }
+            }
+            a {
+                text-align: center;
+                width: 20%;
+                background-color: $green;
+                font-family: "Fraunces", sans-serif;
+                font-weight: 700;
+                color: $lightcream;
+                font-size: 1.2rem;
+                padding: 1rem;
+                border-radius: 8px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #78d3d1;
+                }
+            }
+        }
+      
+        }
+        footer {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            background-color: $blue;
+            
+            nav {
+                padding: 5% 5%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                gap: 3rem;
+               
+                img {
+                    width: 85%;
+                    opacity: 1;
+                }
+                .footerContent {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2.5rem;
+                    align-items: center;
+                    .links {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2rem;
+                        a {
+                            text-decoration: none;
+                            color: $gray;
+                            font-family: "Barlow", sans-serif;
+                            font-weight: 700;
+                            font-size: .8rem;
+                            opacity: .8;
+                            &:hover {
+                                opacity: 1;
+                            }
+                        }
+                        a:first-child {
+                            opacity: 1;
+                        }
+                    }
+                  
+                }
+                div:first-child {
+                    gap: 3rem;
+                    div {
+                        gap: 3rem;
+                    }
+                }
+                div:last-child {
+                    gap: 2rem;
+                    a {
+                        opacity: 1;
+                        cursor: pointer;
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+                .socials {
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
