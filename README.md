@@ -6,11 +6,9 @@ Users should be able to:
 - [x] See hover states for all interactive elements throughout the site
 - [x] Make selections to create a coffee subscription and see an order summary modal of their choices 
 
-### Links
-
 - Live Site URL: [LIVE](https://coffee-sub.vercel.app/)
 
-![](./url.png)
+![](./coffee.png)
 
 ### Built with
 
