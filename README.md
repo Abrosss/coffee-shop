@@ -8,7 +8,7 @@ Users should be able to:
 
 - Live Site URL: [LIVE](https://coffee-sub.vercel.app/)
 
-![](./coffee.png)
+![](./coffee.jpg)
 
 ### Built with
 
