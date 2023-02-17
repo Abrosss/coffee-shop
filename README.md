@@ -18,7 +18,4 @@ Users should be able to:
 - NODE JS
 
 
-## Author
-
-- [Twitter](https://twitter.com/ronessu)
 
